@@ -1,0 +1,21 @@
+{
+  "exclude": ["node_modules"],
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "ES2017",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "ES2022"
+    }
+  }
+}

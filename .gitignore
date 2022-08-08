@@ -1,0 +1,11 @@
+node_modules
+bin
+dotnet
+packages
+client_packages
+src/views
+BugTrap-x64.dll
+linux_x64.tar.gz
+ragemp-server.exe
+
+.env

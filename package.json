@@ -1,0 +1,41 @@
+{
+  "name": "server-files",
+  "version": "1.0.0",
+  "author": "Dmitriy Derkach",
+  "scripts": {
+    "run-server": "ragemp-server.exe --trace-warnings",
+    "------- Building -------": "",
+    "build:server": "rimraf packages/gamemode/server && swc ./src/server --out-dir ./packages/gamemode && swc ./src/shared --out-dir ./packages/gamemode",
+    "build:client": "npx spack",
+    "build": "run-p build:*",
+    "clean:server": "rimraf packages/server",
+    "clean:client": "rimraf client_packages/client",
+    "------- Development -------": "",
+    "start": "cls && run-s build run-server",
+    "watch": "cls && nodemon --watch ./src/server/**/* --watch ./src/client/**/* -e ts --exec run-s build run-server",
+    "watch:server": "cls && nodemon --watch ./src/server/**/* -e ts --exec run-s build:server run-server",
+    "watch:client": "cls && nodemon --watch ./src/client/**/* -e ts --exec run-s build:client run-server",
+    "views:serve": "cd ./src/views && npm run serve"
+  },
+  "devDependencies": {
+    "@ragempcommunity/types-client": "^2.0.6",
+    "@ragempcommunity/types-server": "^2.0.6",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.219",
+    "@types/node": "^18.0.6",
+    "esbuild": "^0.14.49",
+    "nodemon": "^2.0.19",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.0.1",
+    "mysql2": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.7"
+  }
+}

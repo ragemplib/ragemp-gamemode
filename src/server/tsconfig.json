@@ -1,0 +1,8 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "../../packages/gamemode",
+        "types": ["node", "@ragempcommunity/types-server", "./"],
+    },
+    "include": ["./**/*.ts", "../shared"]
+}
